@@ -26,7 +26,7 @@ extern "C"
 
 #define SERVICE_LORA_DLINK_BUFF_SIZE 256
 
-#define LORAWAN_VERSION "LoRaWAN 1.0.3"
+#define LORAWAN_VERSION "LoRaWAN 1.0.4"
 
 #define SERVICE_LORA_CHANNEL_ALL 0U
 #define SERVICE_LORA_CHANNEL_0_63 0x00ff
@@ -40,14 +40,6 @@ extern "C"
 #define SERVICE_LORA_CHANNEL_56_63 (1 << 7)
 #define SERVICE_LORA_CHANNEL_80_87 (1 << 10)
 #define SERVICE_LORA_CHANNEL_88_95 (1 << 11)
-
-    typedef enum PackageNotifyTypes_e
-    {
-        PACKAGE_MCPS_CONFIRM,
-        PACKAGE_MCPS_INDICATION,
-        PACKAGE_MLME_CONFIRM,
-        PACKAGE_MLME_INDICATION,
-    }PackageNotifyTypes_t;
 
     typedef enum _SERVICE_LORA_MAC_CMD
     {
@@ -119,7 +111,6 @@ extern "C"
     typedef void (*service_lora_send_cb)(int32_t status);
     typedef void (*service_lora_linkcheck_cb)(SERVICE_LORA_LINKCHECK_T *data);
     typedef void (*service_lora_timereq_cb)(int32_t status);
-    typedef void (*service_lora_mcastsetup_cb)(void);
 
     typedef enum _GET_DEVICE_TIME_STATUS
     {
@@ -527,7 +518,6 @@ extern "C"
 
     int32_t service_lora_set_IsCertPortOn(bool IsCertPortOn);
     uint8_t service_lora_get_IsCertPortOn(void);
-    void restore_abp_config(void);
 #endif
 
     bool service_lora_isbusy(void);

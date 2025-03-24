@@ -202,7 +202,7 @@ int32_t uhal_timer_create (TimerID_E timer_id, timer_handler tmr_handler, TimerM
     uhal_timer_pdata[timer_id].timer_id = timer_id;
     uhal_timer_pdata[timer_id].timer_func = tmr_handler;
 
-    if(apollo3_timer_id == NULL)
+    //if(apollo3_timer_id == NULL)
     {
         apollo3_timer_id = xTimerCreate("TMR",
                                   1,

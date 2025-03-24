@@ -338,7 +338,7 @@ void rui_event_handler_func(void *data, uint16_t size) {
             LoRaMacProcess( );
 
             // Call all packages process functions
-            //LmHandlerPackagesProcess( );
+            LmHandlerPackagesProcess( );
 #endif
             break;
         }
@@ -558,18 +558,13 @@ void rui_running(void)
 #ifdef LORA_STACK_104
     // Process Radio IRQ
     if( Radio.IrqProcess != NULL )
-    {                
+    {
         Radio.IrqProcess( );
     }
-
 #endif
 #endif
 
     udrv_system_event_consume();
-    LoRaMacProcess( );
-
-    // Call all packages process functions
-    LmHandlerPackagesProcess();
 }
 
 static void loop_task(void* arg)

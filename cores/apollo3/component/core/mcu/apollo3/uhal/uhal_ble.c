@@ -1507,7 +1507,7 @@ int32_t uhal_nus_write(uint8_t *pdata, uint16_t length)
     
     if(remaining != 0)
     {
-        //am_log_inf("sending failed. (%u)", remaining);
+        am_log_inf("sending failed. (%u)", remaining);
         return -UDRV_INTERNAL_ERR;
     }
 
