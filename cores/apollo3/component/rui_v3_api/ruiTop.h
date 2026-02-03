@@ -95,7 +95,7 @@ enum BitOrder {
 #define INPUT 0x0
 #define OUTPUT 0x1
 #define INPUT_PULLUP 0x2
-#define INPUT_PULLDOWN 0x3 //FIXME
+#define INPUT_PULLDOWN 0x3
 
 #define LED_BUILTIN GREEN_LED
 

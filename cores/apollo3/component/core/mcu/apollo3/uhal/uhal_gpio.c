@@ -131,7 +131,7 @@ void uhal_gpio_set_pull(uint32_t pin, gpio_pull_t pull)
     }
 
     if (pull == GPIO_PULL_DOWN) {
-        // gpio_status[pin].gpio.ePullup = AM_HAL_GPIO_PIN_PULLDOWN;
+        gpio_status[pin].gpio.ePullup = AM_HAL_GPIO_PIN_PULLDOWN;
     } else if (pull == GPIO_PULL_UP) {
         gpio_status[pin].gpio.ePullup = AM_HAL_GPIO_PIN_PULLUP_WEAK;
     } else if (pull == GPIO_PULL_NONE) {

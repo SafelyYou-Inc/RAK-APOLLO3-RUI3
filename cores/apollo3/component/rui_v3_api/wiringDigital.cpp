@@ -11,6 +11,9 @@ void pinMode(uint8_t pin, uint8_t mode)
   } else if (mode == INPUT_PULLUP) { 
     udrv_gpio_set_dir((uint32_t)pin, GPIO_DIR_IN);
     udrv_gpio_set_pull((uint32_t)pin, GPIO_PULL_UP);
+  } else if (mode == INPUT_PULLDOWN) {
+    udrv_gpio_set_dir((uint32_t)pin, GPIO_DIR_IN);
+    udrv_gpio_set_pull((uint32_t)pin, GPIO_PULL_DOWN);
   } else {
     udrv_gpio_set_dir((uint32_t)pin, GPIO_DIR_OUT);  
   }
