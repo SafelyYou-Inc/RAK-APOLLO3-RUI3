@@ -30,6 +30,7 @@
 #include "sx126x-board.h"
 #include "board.h"
 #include "am_log.h"
+#include "udrv_system.h"
 
 /*!
  * \brief Initializes the radio
@@ -476,6 +477,7 @@ static RadioPublicNetwork_t RadioPublicNetwork = { false };
  * Radio callbacks variable
  */
 static RadioEvents_t* RadioEvents;
+static udrv_system_event_t RadioIrqEvent = { .request = UDRV_SYS_EVT_OP_LORAWAN, .p_context = NULL };
 
 /*
  * Public global variables
@@ -1264,6 +1266,7 @@ void RadioOnRxTimeoutIrq( void* context )
 void RadioOnDioIrq( void* context )
 {
     IrqFired = true;
+    udrv_system_event_produce( &RadioIrqEvent );
 }
 
 void RadioIrqProcess( void )
