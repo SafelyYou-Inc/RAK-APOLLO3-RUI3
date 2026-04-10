@@ -520,11 +520,11 @@ void uhal_gpio_suspend(void) {
         //    am_hal_gpio_pinconfig(i, g_AM_HAL_GPIO_DISABLE);
         //    continue;
         //}
-        if (i == RADIO_ANT_SW)
-        {
-            am_hal_gpio_pinconfig(i, g_AM_HAL_GPIO_DISABLE);
-            continue;
-        }
+        // if (i == RADIO_ANT_SW)
+        // {
+        //     am_hal_gpio_pinconfig(i, g_AM_HAL_GPIO_DISABLE);
+        //     continue;
+        // }
         //if (i == RADIO_NSS)
         //{
         //    am_hal_gpio_pinconfig(i, g_AM_HAL_GPIO_DISABLE);
@@ -562,11 +562,11 @@ void uhal_gpio_resume(void) {
         //    am_hal_gpio_pinconfig(i, g_AM_HAL_GPIO_DISABLE);
         //    continue;
         //}
-        if (i == RADIO_ANT_SW)
-        {
-            am_hal_gpio_pinconfig(i, gpio_status[i].gpio);
-            continue;
-        }
+        // if (i == RADIO_ANT_SW)
+        // {
+        //     am_hal_gpio_pinconfig(i, gpio_status[i].gpio);
+        //     continue;
+        // }
         //if (i == RADIO_NSS)
         //{
         //    am_hal_gpio_pinconfig(i, g_AM_HAL_GPIO_DISABLE);
